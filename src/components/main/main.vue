@@ -9,7 +9,7 @@ let firstScreen = false
 
 export default {
   name: 'app',
-  updated: () => {
+  mounted: () => {
     if (!firstScreen) {
       firstScreen = true
       window.performanceInfo.firstScreenTime = +new Date()
