@@ -1,0 +1,14 @@
+@import "src/common/scss/mixin.scss";
+
+.toast {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(0,0,0,.8);
+  color: #fff;
+  padding: .1rem .2rem;
+  @include font-dpr(24px);
+  border-radius: .1rem;
+}
