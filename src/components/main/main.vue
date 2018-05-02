@@ -5,8 +5,16 @@
 </template>
 
 <script>
+let firstScreen = false
+
 export default {
-  name: 'app'
+  name: 'app',
+  updated: () => {
+    if (!firstScreen) {
+      firstScreen = true
+      window.performanceInfo.firstScreenTime = +new Date()
+    }
+  }
 }
 </script>
 
