@@ -9,6 +9,7 @@ let firstScreen = false
 
 export default {
   name: 'app',
+  // 如果需要加载接口数据，可以换成updated
   mounted: () => {
     if (!firstScreen) {
       firstScreen = true
