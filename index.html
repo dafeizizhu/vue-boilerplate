@@ -77,8 +77,24 @@
     </script>-->
     <!--<![endif]-->
     <!--上线之前打开
-    <script src='//a.msstatic.com/huya/hd/cdn_libs/performance_report-min.js'></script>
+    <script>
+    (function() {
+      var report = document.createElement("script");
+      report.src = 'https://a.msstatic.com/huya/hd/cdn_libs/performance_report-min.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(report, s);
+    })();
+    </script>
     -->
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.info('sw registered'))
+          .catch(err => console.info('sw register failed', err))
+      })
+    }
+    </script>
 </body>
 
 </html>

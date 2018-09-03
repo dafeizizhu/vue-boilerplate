@@ -3,5 +3,6 @@ const merge = require('webpack-merge')
 const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
+  isDebug: 'true',
   NODE_ENV: '"development"'
 })
