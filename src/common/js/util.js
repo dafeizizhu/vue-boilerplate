@@ -6,16 +6,6 @@ const invokeLoginFromApp = () => {
   location.href = 'http://www.huya.com?hyaction=forenotice&login=0'
 }
 
-const getQueryString = key => {
-  let search = location.search.slice(1)
-  let array = search.split('&')
-  for (let i = 0, len = array.length; i < len; i++) {
-    let kv = array[i].split('=')
-    if (kv[0] === key) {
-      return kv[1]
-    }
-  }
-}
 
 const getPlatform = () => {
   let browser = {
@@ -131,9 +121,9 @@ const trimHttpURL = url => $.trim(url).replace(/^http:/, '')
 
 export default {
   invokeLoginFromApp,
-  getQueryString,
   getPlatform,
   getCookie,
+  getURLParam,
   checkLogin,
   jumproom,
   dy,
